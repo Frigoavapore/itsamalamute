@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}It's A Malamute</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}La guida completa all'Alaskan Malamute — razza, addestramento, salute, alimentazione e vita quotidiana con il tuo Malamute.{% endif %}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Navigazione principale">
+    <div class="container">
+      <a href="/it/" class="nav-logo">
+        It's A <span>Malamute</span>
+        <small>La tua guida completa</small>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/it/la-razza/" {% if page.url | includes("/la-razza/") %}class="active"{% endif %}>La Razza</a></li>
+        <li><a href="/it/addestramento/" {% if page.url | includes("/addestramento/") %}class="active"{% endif %}>Addestramento</a></li>
+        <li><a href="/it/salute/" {% if page.url | includes("/salute/") %}class="active"{% endif %}>Salute</a></li>
+        <li><a href="/it/alimentazione/" {% if page.url | includes("/alimentazione/") %}class="active"{% endif %}>Alimentazione</a></li>
+        <li><a href="/it/attrezzatura/" {% if page.url | includes("/attrezzatura/") %}class="active"{% endif %}>Attrezzatura</a></li>
+        <li><a href="/it/galleria/" {% if page.url | includes("/galleria/") %}class="active"{% endif %}>Galleria</a></li>
+      </ul>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="nav-lang">
+          <a href="/it/" class="current">IT</a>
+          <a href="/en/">EN</a>
+        </div>
+        <button class="nav-hamburger" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">It's A <span>Malamute</span></div>
+          <p class="footer-brand-tagline">La risorsa definitiva per gli amanti dell'Alaskan Malamute: guide, consigli pratici ed esperienze dirette per vivere al meglio con il tuo cane.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">La Razza</div>
+          <ul class="footer-links">
+            <li><a href="/it/la-razza/">Panoramica</a></li>
+            <li><a href="/it/addestramento/">Addestramento</a></li>
+            <li><a href="/it/salute/">Salute & Cura</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Risorse</div>
+          <ul class="footer-links">
+            <li><a href="/it/alimentazione/">Alimentazione</a></li>
+            <li><a href="/it/attrezzatura/">Attrezzatura</a></li>
+            <li><a href="/it/allevatori/">Allevatori</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Sito</div>
+          <ul class="footer-links">
+            <li><a href="/it/galleria/">Galleria</a></li>
+            <li><a href="/it/chi-siamo/">Chi siamo</a></li>
+            <li><a href="/en/">🇬🇧 English</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 It's A Malamute. Tutti i diritti riservati.</span>
+        <span class="footer-copy">Questo sito non fornisce consigli veterinari.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+  </script>
+</body>
+</html>

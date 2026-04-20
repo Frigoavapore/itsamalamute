@@ -1,0 +1,13 @@
+{
+  "name": "itsalamute",
+  "version": "1.0.0",
+  "description": "It's A Malamute — your complete guide to the Alaskan Malamute",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "luxon": "^3.4.4"
+  }
+}

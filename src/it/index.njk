@@ -1,0 +1,201 @@
+---
+layout: base-it.njk
+title: Home
+description: La guida completa all'Alaskan Malamute — razza, addestramento, salute, alimentazione e vita quotidiana con il tuo cane.
+permalink: /it/
+---
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow fade-up">Alaskan Malamute — Guida Completa</p>
+      <h1 class="hero-title fade-up fade-up-1">
+        Tutto quello<br>che <em>devi sapere</em><br>sul Malamute.
+      </h1>
+      <p class="hero-desc fade-up fade-up-2">
+        Che tu stia valutando di prendere un cucciolo o che il tuo Malamute sia già di casa, qui trovi guide pratiche, consigli basati sull'esperienza diretta e tutto ciò che serve per vivere bene con questa razza straordinaria.
+      </p>
+      <a href="#categorie" class="hero-cta fade-up fade-up-3">
+        Esplora le guide
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="hero-image-wrap fade-up fade-up-2">
+      <div class="hero-placeholder">
+        <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="32" cy="20" r="10"/>
+          <path d="M16 54c0-8.8 7.2-16 16-16s16 7.2 16 16"/>
+          <path d="M8 32c0-4.4 3.6-8 8-8M56 32c0-4.4-3.6-8-8-8"/>
+        </svg>
+        <span>Foto in arrivo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories-section" id="categorie">
+  <div class="container">
+    <p class="section-label">Esplora per argomento</p>
+    <h2 class="section-title">Di cosa hai bisogno?</h2>
+    <p class="section-sub">Guide complete per ogni fase della vita con il tuo Malamute.</p>
+
+    <div class="categories-grid">
+
+      <a href="/it/la-razza/" class="cat-card">
+        <div class="cat-card-image">
+          <div class="cat-card-icon">🐺</div>
+        </div>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">La Razza</h3>
+          <p class="cat-card-desc">Storia, carattere, standard morfologico e tutto ciò che rende l'Alaskan Malamute unico nel suo genere.</p>
+          <span class="cat-card-link">Scopri la razza →</span>
+        </div>
+      </a>
+
+      <a href="/it/addestramento/" class="cat-card">
+        <div class="cat-card-image">
+          <div class="cat-card-icon">🎯</div>
+        </div>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Addestramento</h3>
+          <p class="cat-card-desc">Tecniche positive, gestione del richiamo, socializzazione e come stabilire regole chiare con un cane nordico.</p>
+          <span class="cat-card-link">Guide all'addestramento →</span>
+        </div>
+      </a>
+
+      <a href="/it/salute/" class="cat-card">
+        <div class="cat-card-image">
+          <div class="cat-card-icon">🏥</div>
+        </div>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Salute & Cura</h3>
+          <p class="cat-card-desc">Patologie tipiche della razza, grooming, cura del mantello e come tenere il tuo Malamute in forma.</p>
+          <span class="cat-card-link">Guide alla salute →</span>
+        </div>
+      </a>
+
+      <a href="/it/alimentazione/" class="cat-card">
+        <div class="cat-card-image">
+          <div class="cat-card-icon">🍖</div>
+        </div>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Alimentazione</h3>
+          <p class="cat-card-desc">Crocchette, BARF, quantità giornaliere e tutto quello che serve per nutrire correttamente un cane di taglia grande.</p>
+          <span class="cat-card-link">Guide all'alimentazione →</span>
+        </div>
+      </a>
+
+      <a href="/it/attrezzatura/" class="cat-card">
+        <div class="cat-card-image">
+          <div class="cat-card-icon">🎒</div>
+        </div>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Attrezzatura</h3>
+          <p class="cat-card-desc">I migliori prodotti testati direttamente: imbracature, cucce, spazzole, guinzagli e accessori per il trekking.</p>
+          <span class="cat-card-link">Vedi i prodotti →</span>
+        </div>
+      </a>
+
+      <a href="/it/allevatori/" class="cat-card">
+        <div class="cat-card-image">
+          <div class="cat-card-icon">🏡</div>
+        </div>
+        <div class="cat-card-body">
+          <h3 class="cat-card-title">Allevatori</h3>
+          <p class="cat-card-desc">Come trovare un allevatore serio in Italia, cosa chiedere, red flags da evitare e come scegliere il cucciolo giusto.</p>
+          <span class="cat-card-link">Trova un allevatore →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- LATEST POSTS -->
+<section class="latest-section">
+  <div class="container">
+    <p class="section-label">Dal blog</p>
+    <h2 class="section-title">Ultimi articoli</h2>
+    <p class="section-sub">Esperienze dirette, guide pratiche e aggiornamenti.</p>
+
+    <div class="posts-grid">
+      {% set recentPosts = collections.it_posts | reverse | slice(0, 6) %}
+      {% if recentPosts and recentPosts.length > 0 %}
+        {% for post in recentPosts %}
+        <a href="{{ post.url }}" class="post-card">
+          <div class="post-card-image">
+            {% if post.data.cover %}
+              <img src="{{ post.data.cover }}" alt="{{ post.data.title }}" loading="lazy">
+            {% else %}
+              <div class="post-card-placeholder">🐾</div>
+            {% endif %}
+          </div>
+          <div class="post-card-body">
+            <div class="post-card-cat">{{ post.data.category or "Articolo" }}</div>
+            <h3 class="post-card-title">{{ post.data.title }}</h3>
+            {% if post.data.description %}
+            <p class="post-card-excerpt">{{ post.data.description }}</p>
+            {% endif %}
+            <div class="post-card-meta">{{ post.date | readableDate }}</div>
+          </div>
+        </a>
+        {% endfor %}
+      {% else %}
+        <!-- Placeholder cards quando non ci sono ancora articoli -->
+        <div class="post-card">
+          <div class="post-card-image"><div class="post-card-placeholder">🐺</div></div>
+          <div class="post-card-body">
+            <div class="post-card-cat">La Razza</div>
+            <h3 class="post-card-title">Carattere dell'Alaskan Malamute: cosa aspettarsi</h3>
+            <p class="post-card-excerpt">Intelligente, indipendente e affettuoso: scopri il vero temperamento del Malamute prima di portarne uno a casa.</p>
+            <div class="post-card-meta">Prossimamente</div>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="post-card-image"><div class="post-card-placeholder">🎯</div></div>
+          <div class="post-card-body">
+            <div class="post-card-cat">Addestramento</div>
+            <h3 class="post-card-title">Come addestrare un cucciolo di Malamute: guida per principianti</h3>
+            <p class="post-card-excerpt">I primi comandi, la gestione del guinzaglio e come costruire un rapporto di fiducia fin dai primi giorni.</p>
+            <div class="post-card-meta">Prossimamente</div>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="post-card-image"><div class="post-card-placeholder">🏥</div></div>
+          <div class="post-card-body">
+            <div class="post-card-cat">Salute</div>
+            <h3 class="post-card-title">Displasia all'anca nel Malamute: sintomi e prevenzione</h3>
+            <p class="post-card-excerpt">Una delle patologie più comuni nella razza: come riconoscerla precocemente e quali accorgimenti adottare.</p>
+            <div class="post-card-meta">Prossimamente</div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="view-all-wrap">
+      <a href="/it/blog/" class="btn-outline">
+        Tutti gli articoli
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<section class="about-strip">
+  <div class="container">
+    <div class="about-strip-inner">
+      <div class="about-strip-photo">🐾</div>
+      <div>
+        <p class="section-label" style="color: var(--copper-lt);">Chi siamo</p>
+        <h2 class="about-strip-title" style="color: var(--cream);">Una guida scritta da chi vive davvero con un Malamute.</h2>
+        <p class="about-strip-text">
+          Questo sito nasce dall'esperienza diretta: le guide che trovi qui non sono copiate da altri siti, ma scritte dopo anni passati a condividere la vita quotidiana con un Alaskan Malamute. Dall'arrivo del cucciolo ai primi problemi, dalle uscite in montagna alla gestione del manto in muta.
+        </p>
+        <a href="/it/chi-siamo/" class="btn-outline">Scopri di più</a>
+      </div>
+    </div>
+  </div>
+</section>

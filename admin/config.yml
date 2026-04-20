@@ -1,0 +1,206 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/itsalamute
+  branch: main
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+locale: "it"
+
+collections:
+  # ─── ITALIANO ────────────────────────────────────────────────
+  - name: "it_razza"
+    label: "🇮🇹 La Razza"
+    folder: "src/it/la-razza"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione (SEO)", name: "description", widget: "text" }
+      - { label: "In evidenza?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "it_addestramento"
+    label: "🇮🇹 Addestramento"
+    folder: "src/it/addestramento"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione (SEO)", name: "description", widget: "text" }
+      - { label: "In evidenza?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "it_salute"
+    label: "🇮🇹 Salute & Cura"
+    folder: "src/it/salute"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione (SEO)", name: "description", widget: "text" }
+      - { label: "In evidenza?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "it_alimentazione"
+    label: "🇮🇹 Alimentazione"
+    folder: "src/it/alimentazione"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione (SEO)", name: "description", widget: "text" }
+      - { label: "In evidenza?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "it_attrezzatura"
+    label: "🇮🇹 Attrezzatura"
+    folder: "src/it/attrezzatura"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione (SEO)", name: "description", widget: "text" }
+      - { label: "In evidenza?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "it_allevatori"
+    label: "🇮🇹 Allevatori"
+    folder: "src/it/allevatori"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione (SEO)", name: "description", widget: "text" }
+      - { label: "In evidenza?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "it_galleria"
+    label: "🇮🇹 Galleria / Aggiornamenti"
+    folder: "src/it/galleria"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Immagine copertina", name: "cover", widget: "image", required: false }
+      - { label: "Descrizione", name: "description", widget: "text" }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-it.njk" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  # ─── ENGLISH ─────────────────────────────────────────────────
+  - name: "en_breed"
+    label: "🇬🇧 The Breed"
+    folder: "src/en/breed"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-en.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "en_training"
+    label: "🇬🇧 Training"
+    folder: "src/en/training"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-en.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "en_health"
+    label: "🇬🇧 Health & Care"
+    folder: "src/en/health"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-en.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "en_nutrition"
+    label: "🇬🇧 Nutrition"
+    folder: "src/en/nutrition"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-en.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "en_gear"
+    label: "🇬🇧 Gear & Products"
+    folder: "src/en/gear"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-en.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "en_breeders"
+    label: "🇬🇧 Breeders"
+    folder: "src/en/breeders"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Featured?", name: "featured", widget: "boolean", default: false }
+      - { label: "type", name: "type", widget: "hidden", default: "post" }
+      - { label: "layout", name: "layout", widget: "hidden", default: "article-en.njk" }
+      - { label: "Body", name: "body", widget: "markdown" }

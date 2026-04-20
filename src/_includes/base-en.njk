@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}It's A Malamute</title>
+  <meta name="description" content="{% if description %}{{ description }}{% else %}Your complete guide to the Alaskan Malamute — breed facts, training, health, nutrition and daily life with your Malamute.{% endif %}">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="/en/" class="nav-logo">
+        It's A <span>Malamute</span>
+        <small>Your complete guide</small>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/en/breed/" {% if page.url | includes("/breed/") %}class="active"{% endif %}>The Breed</a></li>
+        <li><a href="/en/training/" {% if page.url | includes("/training/") %}class="active"{% endif %}>Training</a></li>
+        <li><a href="/en/health/" {% if page.url | includes("/health/") %}class="active"{% endif %}>Health</a></li>
+        <li><a href="/en/nutrition/" {% if page.url | includes("/nutrition/") %}class="active"{% endif %}>Nutrition</a></li>
+        <li><a href="/en/gear/" {% if page.url | includes("/gear/") %}class="active"{% endif %}>Gear</a></li>
+        <li><a href="/en/gallery/" {% if page.url | includes("/gallery/") %}class="active"{% endif %}>Gallery</a></li>
+      </ul>
+
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="nav-lang">
+          <a href="/it/">IT</a>
+          <a href="/en/" class="current">EN</a>
+        </div>
+        <button class="nav-hamburger" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-name">It's A <span>Malamute</span></div>
+          <p class="footer-brand-tagline">The definitive resource for Alaskan Malamute lovers: guides, practical tips and first-hand experiences for a great life with your dog.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">The Breed</div>
+          <ul class="footer-links">
+            <li><a href="/en/breed/">Overview</a></li>
+            <li><a href="/en/training/">Training</a></li>
+            <li><a href="/en/health/">Health & Care</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Resources</div>
+          <ul class="footer-links">
+            <li><a href="/en/nutrition/">Nutrition</a></li>
+            <li><a href="/en/gear/">Gear & Products</a></li>
+            <li><a href="/en/breeders/">Breeders</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Site</div>
+          <ul class="footer-links">
+            <li><a href="/en/gallery/">Gallery</a></li>
+            <li><a href="/en/about/">About</a></li>
+            <li><a href="/it/">🇮🇹 Italiano</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 It's A Malamute. All rights reserved.</span>
+        <span class="footer-copy">This site does not provide veterinary advice.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links  = document.getElementById('navLinks');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        const open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+  </script>
+</body>
+</html>

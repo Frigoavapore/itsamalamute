@@ -1,0 +1,46 @@
+---
+layout: base-it.njk
+---
+<article>
+  <!-- HERO -->
+  <div class="article-hero">
+    <div class="container article-hero-inner">
+      <div class="article-meta-top">
+        <span class="article-cat-badge">{{ category or "Articolo" }}</span>
+        <time class="article-date" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+      </div>
+      <h1 class="article-title">{{ title }}</h1>
+      {% if description %}
+      <p class="article-description">{{ description }}</p>
+      {% endif %}
+
+      {% if cover %}
+      <div class="article-cover-wrap">
+        <img src="{{ cover }}" alt="{{ title }}" loading="lazy">
+      </div>
+      {% else %}
+      <div class="article-cover-wrap">
+        <div class="article-cover-placeholder">🐾</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="/it/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/it/{{ page.url.split('/')[2] }}/">{{ category or "Articoli" }}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{{ title }}</span>
+    </div>
+  </nav>
+
+  <!-- BODY -->
+  <div class="article-body-wrap">
+    <div class="article-body">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
