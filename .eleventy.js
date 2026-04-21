@@ -3,7 +3,7 @@ const { DateTime } = require("luxon");
 module.exports = function(eleventyConfig) {
 
   // Copy static assets
-  eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy({ "public": "." });
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("src/images");
 
