@@ -1,11 +1,35 @@
 ---
-layout: category-it.njk
-title: Salute & Cura
-description: Patologie tipiche della razza, grooming, cura del mantello e consigli per mantenere il tuo Malamute in ottima salute.
+layout: base-it.njk
+title: "Salute & Cura"
 permalink: /it/salute/
-catIcon: "🏥"
-pagination:
-  data: collections.it_salute
-  size: 100
-  alias: posts
 ---
+<section class="cat-hero">
+  <div class="container cat-hero-inner">
+    <p class="cat-hero-eyebrow">It's A Malamute</p>
+    <h1 class="cat-hero-title">Salute & Cura</h1>
+  </div>
+</section>
+<nav class="breadcrumb"><div class="container breadcrumb-inner"><a href="/it/">Home</a><span class="breadcrumb-sep">›</span><span>Salute & Cura</span></div></nav>
+<section class="cat-posts-section"><div class="container">
+  {% set posts = collections.it_salute %}
+  {% if posts and posts.length > 0 %}
+  <div class="posts-grid">
+    {% for post in posts | reverse %}
+    <a href="{{ post.url }}" class="post-card">
+      <div class="post-card-image">{% if post.data.cover %}<img src="{{ post.data.cover }}" alt="{{ post.data.title }}" loading="lazy">{% else %}<div class="post-card-placeholder">🏥</div>{% endif %}</div>
+      <div class="post-card-body">
+        <div class="post-card-cat">Salute & Cura</div>
+        <h2 class="post-card-title">{{ post.data.title }}</h2>
+        {% if post.data.description %}<p class="post-card-excerpt">{{ post.data.description }}</p>{% endif %}
+        <div class="post-card-meta">{{ post.date | readableDate }}</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div style="text-align:center;padding:80px 0;color:var(--text-light);">
+    <p style="font-family:var(--ff-mono);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">Prossimamente</p>
+    <p style="font-family:var(--ff-display);font-size:1.5rem;color:var(--arctic);">Articoli in arrivo.</p>
+  </div>
+  {% endif %}
+</div></section>
