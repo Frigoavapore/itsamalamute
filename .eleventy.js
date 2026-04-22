@@ -3,7 +3,7 @@ const { DateTime } = require("luxon");
 module.exports = function(eleventyConfig) {
 
   // Copy static assets
-  eleventyConfig.addPassthroughCopy({ "public": "." });
+  eleventyConfig.addPassthroughCopy("public");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("src/images");
 
@@ -73,6 +73,36 @@ module.exports = function(eleventyConfig) {
   // Collections — EN
   eleventyConfig.addCollection("en_posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/en/**/*.md")
+      .filter(item => item.data.type === "post")
+      .sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("en_breed", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/en/breed/*.md")
+      .filter(item => item.data.type === "post")
+      .sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("en_training", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/en/training/*.md")
+      .filter(item => item.data.type === "post")
+      .sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("en_health", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/en/health/*.md")
+      .filter(item => item.data.type === "post")
+      .sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("en_nutrition", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/en/nutrition/*.md")
+      .filter(item => item.data.type === "post")
+      .sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("en_gear", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/en/gear/*.md")
+      .filter(item => item.data.type === "post")
+      .sort((a, b) => b.date - a.date);
+  });
+  eleventyConfig.addCollection("en_breeders", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/en/breeders/*.md")
       .filter(item => item.data.type === "post")
       .sort((a, b) => b.date - a.date);
   });
