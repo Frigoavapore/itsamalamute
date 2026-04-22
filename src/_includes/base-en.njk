@@ -6,7 +6,9 @@
   <title>{% if title %}{{ title }} — {% endif %}It's A Malamute</title>
   <meta name="description" content="{% if description %}{{ description }}{% else %}Your complete guide to the Alaskan Malamute — breed facts, training, health, nutrition and daily life with your Malamute.{% endif %}">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
@@ -79,7 +81,11 @@
       </div>
       <div class="footer-bottom">
         <span class="footer-copy">© 2025 It's A Malamute. All rights reserved.</span>
-        <span class="footer-copy">This site does not provide veterinary advice.</span>
+        <span class="footer-copy">
+          <a href="/en/privacy-policy/" style="color:var(--wolf);">Privacy Policy</a> ·
+          <a href="/en/cookie-policy/" style="color:var(--wolf);">Cookie Policy</a> ·
+          This site does not provide veterinary advice.
+        </span>
       </div>
     </div>
   </footer>
@@ -93,6 +99,8 @@
         toggle.setAttribute('aria-expanded', open);
       });
     }
+    window.GA_ID = 'G-NGMREXNNBV';
   </script>
+  <script src="/js/cookies.js" defer></script>
 </body>
 </html>

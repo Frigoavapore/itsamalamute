@@ -6,7 +6,9 @@
   <title>{% if title %}{{ title }} — {% endif %}It's A Malamute</title>
   <meta name="description" content="{% if description %}{{ description }}{% else %}La guida completa all'Alaskan Malamute — razza, addestramento, salute, alimentazione e vita quotidiana con il tuo Malamute.{% endif %}">
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 </head>
 <body>
 
@@ -79,7 +81,11 @@
       </div>
       <div class="footer-bottom">
         <span class="footer-copy">© 2025 It's A Malamute. Tutti i diritti riservati.</span>
-        <span class="footer-copy">Questo sito non fornisce consigli veterinari.</span>
+        <span class="footer-copy">
+          <a href="/it/privacy-policy/" style="color:var(--wolf);">Privacy Policy</a> ·
+          <a href="/it/cookie-policy/" style="color:var(--wolf);">Cookie Policy</a> ·
+          Questo sito non fornisce consigli veterinari.
+        </span>
       </div>
     </div>
   </footer>
@@ -94,6 +100,9 @@
         toggle.setAttribute('aria-expanded', open);
       });
     }
+    // Google Analytics ID — loaded only if user consents
+    window.GA_ID = 'G-NGMREXNNBV';
   </script>
+  <script src="/js/cookies.js" defer></script>
 </body>
 </html>
